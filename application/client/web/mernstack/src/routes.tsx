@@ -26,6 +26,7 @@ let routes: any = [
 { path: '/managecontrol', component: Managecontrol },
 { path: '/usermanagement', component: User },
 { path: '/profile', component: ProfilesettingsComponent },
+{ path : '/getall', component: lazy(()=>import('./app/getall/getall')) },
 { path: "", component: Template }
 
 ];

@@ -170,6 +170,7 @@ services:
       - securitymanager
       - systemcredentialmanager
       - systementry
+      - ticket
 
     networks:
       - mernstack_9252_net
@@ -250,7 +251,28 @@ services:
     image: systementry-9252
     container_name: systementry-9252
     ports: 
-      - 8013:8013
+      - 8014:8014
+    env_file: .env
+    depends_on:
+      - mongo
+    networks:
+      - mernstack_9252_net
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        fluentd-async-connect: "true"
+        tag: fluent
+    mem_limit: 300m
+    mem_reservation: 150m
+    cpus: 0.2
+
+  ticket: 
+    build: ../../../application/services/custom_services/ticket
+    image: ticket-9252
+    container_name: ticket-9252
+    ports: 
+      - 8015:8015
     env_file: .env
     depends_on:
       - mongo

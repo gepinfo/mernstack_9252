@@ -12,6 +12,8 @@
   "zone.js": "~0.11.4",
   "tslib": "^2.3.0",
   "rxjs-compat": "6.5.2",
+"i18next-browser-languagedetector": "^3.0.3",
+"i18next": "^17.0.14",
   "rxjs": "~7.5.0",
   "react-social-login": "3.4.14",
   "reactstrap": "^9.0.1",
