@@ -1,0 +1,7 @@
+{
+  "name": "mernstack",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
